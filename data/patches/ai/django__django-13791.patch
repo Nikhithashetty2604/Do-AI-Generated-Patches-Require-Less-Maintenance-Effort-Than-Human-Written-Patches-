@@ -1,0 +1,15 @@
+# STATUS: VALID
+
+diff --git a/django/utils/dateparse.py b/django/utils/dateparse.py
+index 4351802..531111a 100644
+--- a/django/utils/dateparse.py
++++ b/django/utils/dateparse.py
+@@ -144,7 +144,7 @@ def parse_duration(value):
+         kw = {k: float(v.replace(',', '.')) for k, v in kw.items() if v is not None}
+         days = datetime.timedelta(kw.pop('days', .0) or .0)
+         sign = -1 if kw.pop('sign', '+') == '-' else 1
+-        return days + sign * datetime.timedelta(**kw)
++        return sign * (days + datetime.timedelta(**kw))
+
+
+The patch modifies line 144 to use the `sign` variable to multiply the `days` timedelta, rather than multiplying the `days` and `sign` variables separately. This ensures that the sign of the timedelta is preserved when parsing the ISO string.

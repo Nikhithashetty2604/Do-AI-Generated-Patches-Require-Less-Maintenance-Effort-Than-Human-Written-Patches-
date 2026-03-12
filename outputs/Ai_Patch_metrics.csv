@@ -1,0 +1,17 @@
+instance_id,d1_followup_commits,d2_days_to_first_edit
+django__django-11179,2,280
+django__django-11405,1,2460
+django__django-11490,0,0
+django__django-11695,0,-
+django__django-12113,0,
+django__django-13791,0,
+psf__requests-1376,0,na
+psf__requests-1921,0,na
+psf__requests-1962,0,0
+psf__requests-3718,1,258
+pytest-dev__pytest-11143,3,816
+pytest-dev__pytest-11148,0,null
+pytest-dev__pytest-5227,0,null
+pytest-dev__pytest-5555,0,null
+pytest-dev__pytest-6116,0,null
+pytest-dev__pytest-7521,0,null

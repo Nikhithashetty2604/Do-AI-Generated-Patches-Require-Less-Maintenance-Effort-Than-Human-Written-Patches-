@@ -1,0 +1,8 @@
+diff --git a/django/db/backends/sqlite3/creation.py b/django/db/backends/sqlite3/creation.py
+--- a/django/db/backends/sqlite3/creation.py
++++ b/django/db/backends/sqlite3/creation.py
+@@ -98,7 +98,7 @@ def _destroy_test_db(self, test_database_name, verbosity):
+             os.remove(test_database_name)
+-        except Exception as e:
++        except OSError as e:
+             self.log('Got an error cloning the test database: %s' % e)

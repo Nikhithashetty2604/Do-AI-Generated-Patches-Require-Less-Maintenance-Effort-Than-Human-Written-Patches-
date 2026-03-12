@@ -1,0 +1,16 @@
+# STATUS: VALID
+
+diff --git a/src/_pytest/main.py b/src/_pytest/main.py
+index 2111111..2222222 100644
+--- a/src/_pytest/main.py
++++ b/src/_pytest/main.py
+@@ -108,7 +108,7 @@ group = parser.getgroup("collect", "collection")
+     group.addoption(
+         "--collectonly",
+-        "--collect-only",
++        "--co",
+         action="store_true",
+         help="only collect tests, don't execute them.",
+     ),
+```
+This patch modifies the buggy line by changing the option name from `--collect-only` to `--co`. This is a minimal patch that only affects the one line that was causing the bug.

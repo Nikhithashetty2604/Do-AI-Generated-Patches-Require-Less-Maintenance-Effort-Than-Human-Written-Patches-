@@ -1,0 +1,6 @@
+diff --git a/src/_pytest/pathlib.py b/src/_pytest/pathlib.py
+--- a/src/_pytest/pathlib.py
++++ b/src/_pytest/pathlib.py
+@@ -523,7 +523,7 @@ def import_module(p, mode, root):
+-            raise ImportError(f"Can't find module {module_name} at location {path}")
++            raise ImportError(f"Can't find module {module_name} at location {path}")

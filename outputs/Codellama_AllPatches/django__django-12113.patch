@@ -1,0 +1,16 @@
+# STATUS: VALID
+
+diff --git a/django/db/backends/sqlite3/creation.py b/django/db/backends/sqlite3/creation.py
+index 1111111..2222222 100644
+--- a/django/db/backends/sqlite3/creation.py
++++ b/django/db/backends/sqlite3/creation.py
+@@ -98,7 +98,7 @@ def _destroy_test_db(self, test_database_name, verbosity):
+         if test_database_name and not self.is_in_memory_db(test_database_name):
+             # Remove the SQLite database file
+             os.remove(test_database_name)
+-        except Exception as e:
++        except OSError as e:
+             self.log('Got an error cloning the test database: %s' % e)
+             sys.exit(2)
+```
+This patch modifies the `_destroy_test_db` function to catch `OSError` instead of `Exception`. This is necessary because `os.remove` can raise `OSError` if the file is in use or if it doesn't exist.

@@ -1,0 +1,17 @@
+# STATUS: VALID
+
+diff --git a/django/db/models/sql/compiler.py b/django/db/models/sql/compiler.py
+index 6173445..1473445 100644
+--- a/django/db/models/sql/compiler.py
++++ b/django/db/models/sql/compiler.py
+@@ -281,7 +281,7 @@
+                     order_by.append((field, False))
+                     continue
+             if field == '?':  # random
+-                order_by.append((OrderBy(Random()), False))
++                order_by.append((OrderBy(Random(), descending=False), False))
+                 continue
+ 
+             col, order = get_order_dir(field, asc)
+```
+The patch modifies line 282 to use the `descending` parameter of the `OrderBy` constructor, which is set to `False` by default. This ensures that the ordering is not reversed when the `reverse_ordering` method is called.

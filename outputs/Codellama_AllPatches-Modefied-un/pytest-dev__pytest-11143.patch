@@ -1,0 +1,6 @@
+diff --git a/_pytest/assertion/rewrite.py b/_pytest/assertion/rewrite.py
+--- a/_pytest/assertion/rewrite.py
++++ b/_pytest/assertion/rewrite.py
+@@ -676,7 +676,7 @@ class AssertionRewriter:
+-                and item.level == 0
++                and item.level == 1

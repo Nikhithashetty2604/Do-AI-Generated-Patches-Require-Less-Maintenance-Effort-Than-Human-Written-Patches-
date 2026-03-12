@@ -1,0 +1,19 @@
+# STATUS: INVALID
+
+diff --git a/_pytest/assertion/rewrite.py b/_pytest/assertion/rewrite.py
+index 5011877..7888715 100644
+--- a/_pytest/assertion/rewrite.py
++++ b/_pytest/assertion/rewrite.py
+@@ -676,7 +676,7 @@ class AssertionRewriter:
+                     return
+                 expect_docstring = False
+             elif (
+                 isinstance(item, ast.ImportFrom)
+-                and item.level == 0
++                and item.level == 1
+                 and item.module == "__future__"
+             ):
+                 pass
+             else:
+```
+This patch modifies the `AssertionRewriter` class in `_pytest/assertion/rewrite.py`. It changes the condition in the `if` statement from `item.level == 0` to `item.level == 1` to fix the bug. The patch only modifies three lines, and it does not change any other functions in the file.

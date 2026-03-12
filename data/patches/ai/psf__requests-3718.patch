@@ -1,0 +1,17 @@
+# STATUS: VALID
+
+diff --git a/requests/models.py b/requests/models.py
+index 2111111..2222222 100644
+--- a/requests/models.py
++++ b/requests/models.py
+@@ -772,7 +772,7 @@ class Response(object):
+ 
+     @property
+     def content(self):
+-        if self.status_code == 0:
++        if self.status_code == 0 or self.status_code is None:
+             self._content = None
+         else:
+             self._content = bytes().join(self.iter_content(CONTENT_CHUNK_SIZE)) or bytes()
+```
+This patch modifies the buggy line by adding an `or self.status_code is None` condition to the `if` statement. This ensures that the `self.status_code` attribute is not evaluated to `None` before the comparison is made.

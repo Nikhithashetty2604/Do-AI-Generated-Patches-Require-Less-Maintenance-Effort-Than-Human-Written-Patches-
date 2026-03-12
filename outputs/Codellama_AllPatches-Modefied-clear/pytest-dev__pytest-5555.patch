@@ -1,0 +1,6 @@
+diff --git a/src/_pytest/stepwise.py b/src/_pytest/stepwise.py
+--- a/src/_pytest/stepwise.py
++++ b/src/_pytest/stepwise.py
+@@ -75,7 +75,7 @@ def pytest_runtest_logreport(self, report):
+-        if report.failed:
++        if not report.failed:

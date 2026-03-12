@@ -1,0 +1,17 @@
+# STATUS: INVALID
+
+diff --git a/_pytest/logging.py b/_pytest/logging.py
+index 4132115..2111111 100644
+--- a/_pytest/logging.py
++++ b/_pytest/logging.py
+@@ -18,7 +18,7 @@ DEFAULT_LOG_FORMAT = "%(filename)-25s %(lineno)4d %(levelname)-8s %(message)s"
+ DEFAULT_LOG_DATE_FORMAT = "%H:%M:%S"
+ 
+ 
+-DEFAULT_LOG_FORMAT = "%(filename)-25s %(lineno)4d %(levelname)-8s %(message)s"
++DEFAULT_LOG_FORMAT = "%(levelname)-8s %(name)s:%(filename)s:%(lineno)d %(message)s"
+ 
+ 
+ class ColoredLevelFormatter(logging.Formatter):
+```
+This patch modifies the `DEFAULT_LOG_FORMAT` variable to include the module name, filename, and line number in the log message. The `name` attribute is used to get the module name, and the `filename` and `lineno` attributes are used to get the filename and line number, respectively.

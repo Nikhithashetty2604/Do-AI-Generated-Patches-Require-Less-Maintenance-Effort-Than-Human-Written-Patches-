@@ -1,0 +1,6 @@
+diff --git a/src/_pytest/main.py b/src/_pytest/main.py
+--- a/src/_pytest/main.py
++++ b/src/_pytest/main.py
+@@ -108,7 +108,7 @@ group = parser.getgroup("collect", "collection")
+-        "--collect-only",
++        "--co",

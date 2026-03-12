@@ -1,0 +1,16 @@
+# STATUS: VALID
+
+diff --git a/src/_pytest/stepwise.py b/src/_pytest/stepwise.py
+index 2325533..4678345 100644
+--- a/src/_pytest/stepwise.py
++++ b/src/_pytest/stepwise.py
+@@ -75,7 +75,7 @@ def pytest_runtest_logreport(self, report):
+         if not self.active or "xfail" in report.keywords:
+             return
+ 
+-        if report.failed:
++        if not report.failed:
+             if self.skip:
+                 # Remove test from the failed ones (if it exists) and unset the skip option
+```
+This patch modifies the buggy line to check if the test passed instead of failed. This ensures that the test is not skipped if it is marked as xfail.
