@@ -1,8 +1,12 @@
 diff --git a/requests/sessions.py b/requests/sessions.py
 --- a/requests/sessions.py
 +++ b/requests/sessions.py
-@@ -529,7 +529,7 @@ def resolve_redirects(self, r, request, stream=False, timeout=None, verify=True):
+@@ -527,7 +527,7 @@ def send(self, request, **kwargs):
              history.insert(0, r)
+             # Get the last request made
              r = history.pop()
 -            r.history = tuple(history)
-+            r.history = list(history)
++            r.history = history
+ 
+         return r
+ 

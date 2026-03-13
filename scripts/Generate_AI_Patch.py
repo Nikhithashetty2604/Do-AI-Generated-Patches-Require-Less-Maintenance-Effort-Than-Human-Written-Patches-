@@ -13,10 +13,8 @@ from datasets import load_dataset
 
 # HuggingFace token loaded from environment variable
 HF_TOKEN = os.environ.get("HF_TOKEN")
+ENDPOINT = os.environ.get("ENDPOINT")
 
-#Codellamma End Point
-
-ENDPOINT = "https://dz7aqcj07ai4lw1f.us-east-1.aws.endpoints.huggingface.cloud"
 API_URL = f"{ENDPOINT}/v1/chat/completions"
 
 OUTPUT_DIR = "outputs/Codellama_AllPatches"

@@ -1,8 +1,0 @@
-diff --git a/requests/models.py b/requests/models.py
---- a/requests/models.py
-+++ b/requests/models.py
-@@ -772,7 +772,7 @@ class Response(object):
-     def content(self):
--        if self.status_code == 0:
-+        if self.status_code == 0 or self.status_code is None:
-             self._content = None

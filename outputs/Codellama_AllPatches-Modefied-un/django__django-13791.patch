@@ -1,7 +1,0 @@
-diff --git a/django/utils/dateparse.py b/django/utils/dateparse.py
---- a/django/utils/dateparse.py
-+++ b/django/utils/dateparse.py
-@@ -144,7 +144,7 @@ def parse_duration(value):
-         sign = -1 if kw.pop('sign', '+') == '-' else 1
--        return days + sign * datetime.timedelta(**kw)
-+        return sign * (days + datetime.timedelta(**kw))

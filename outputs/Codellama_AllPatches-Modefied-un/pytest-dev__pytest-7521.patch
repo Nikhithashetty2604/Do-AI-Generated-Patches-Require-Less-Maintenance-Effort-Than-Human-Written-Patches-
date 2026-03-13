@@ -1,6 +1,0 @@
-diff --git a/src/_pytest/capture.py b/src/_pytest/capture.py
---- a/src/_pytest/capture.py
-+++ b/src/_pytest/capture.py
-@@ -388,7 +388,7 @@ class CaptureFixture:
--            self.tmpfile = EncodedFile(
-+            self.tmpfile = EncodedFile(
